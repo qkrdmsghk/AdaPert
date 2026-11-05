@@ -1,0 +1,24 @@
+Copyright (c) 2026 AdaPert Authors
+
+This repository is a modified version of TxPert
+(https://github.com/valence-labs/TxPert, commit 08d82eea86746b044cf7531f4ec8c5f60e1cb73f),
+which is licensed under the Recursion Pharmaceuticals, Inc. Non-Commercial End User
+License Agreement. A copy of that agreement is included in this repository as
+TxPert-license.pdf.
+
+The code in this repository was created by modifying TxPert. The AdaPert model
+(src/models/adapert.py) and the other changes were added by the AdaPert Authors.
+The released model checkpoints were trained with this code.
+
+The AdaPert Authors make their contributions to this repository, including the
+released model checkpoints, available under terms equivalent to that agreement:
+they may be used for non-commercial research, academic and educational purposes
+only, subject to the restrictions, attribution and share-alike requirements of
+TxPert-license.pdf. The parts of this repository that come from TxPert remain subject to
+the Recursion Pharmaceuticals, Inc. Non-Commercial End User License Agreement.
+
+THE SOFTWARE AND THE MODEL CHECKPOINTS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE MODEL CHECKPOINTS.

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Environments
+.env
+.venv/
+env/
+
+# Data, checkpoints, and artifacts (not distributed with the code)
+research/
+# Downloaded data (README: Data), checkpoints, predictions and metrics
+TxPert/
+*.zip
+checkpoints/
+predictions/
+eval_results/
+cache/
+wandb_logs/
+lightning_logs/
+logs/
+outputs/
+multirun/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.bak

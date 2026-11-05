@@ -1,0 +1,30 @@
+# Core deep learning
+torch
+lightning
+
+# Graph neural networks
+torch_geometric
+torch_scatter
+
+# Configuration
+hydra-core
+omegaconf
+
+# Single-cell / bioinformatics
+anndata
+scanpy
+
+# Scientific computing
+numpy
+scipy
+pandas
+pyarrow
+
+# Utilities
+tqdm
+joblib
+wandb
+
+# Evaluation
+cell-eval
+polars

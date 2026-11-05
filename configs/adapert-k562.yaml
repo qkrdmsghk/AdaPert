@@ -1,0 +1,46 @@
+# ==========================================================================
+# AdaPert — K562 (Replogle et al., 2022), unseen-perturbation split
+#   knowledge graph : STRING v11.5, top-10 edges per gene; 4-layer GATv2 -> structural embeddings h_v
+#   semantics       : GenePT gene-description embeddings s_p (NCBI / UniProt, 3,072-d)
+# ==========================================================================
+
+wandb:
+  project: adapert
+  name: adapert-k562
+  save_dir: wandb_logs
+
+model:
+  hidden_dim: 256
+  latent_dim: 128
+  dropout: 0.2
+  lr: 0.001
+  non_deg_weight: 0.01        # weight of the non-DEG loss
+
+  context:
+    k_hop: 3                    # hop distance of the candidate neighbours
+    hidden_dim: 64              # scorer hidden size
+    threshold: 0.1              # selection threshold T
+    tau: 1.0                    # Gumbel-softmax temperature (training only)
+    align_weight: 0.1           # weight of the alignment loss
+    scorer_lr_scale: 0.01       # scorer learning rate = lr * scorer_lr_scale
+
+  pert_model:                   # GATv2 over the knowledge graph
+    num_layers: 4
+    hidden_dim: 128
+    num_heads: 2
+    dropout: 0.2
+
+datamodule:
+  task_type: K562_single_cell_line
+  batch_size: 64
+  mask_degs: research/AAA_DEGs/K562_single_cell_line/true_degs_dict.pkl
+
+seed: 1
+max_epochs: 200
+early_stop_patience: 25         # validation checks (validation every 2 epochs)
+weight_decay: 0
+min_lr: 1.0e-06
+
+lr_scheduler:                   # ReduceLROnPlateau on the validation Pearson delta
+  factor: 0.5
+  patience: 10
